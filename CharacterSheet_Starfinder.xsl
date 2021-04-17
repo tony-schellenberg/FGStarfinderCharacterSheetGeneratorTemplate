@@ -10,32 +10,32 @@
 				<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&amp;display=swap" rel="stylesheet"/>
 				<style>
 					.stars, .charsheet-root {
-					position: absolute;
-					display: block;
-					top: 0;
-					bottom: 0;
-					left: 0;
-					right: 0;
-					width: 100%;
-					height: 100%;
+					    position: absolute;
+					    display: block;
+					    top: 0;
+					    bottom: 0;
+					    left: 0;
+					    right: 0;
+					    width: 100%;
+					    height: 100%;
 					}
 
 					.stars {
-					z-index: 0;
-					background-color:black;
-					background-image:
-					radial-gradient(white, rgba(255,255,255,.2) 3px, transparent 10px),
-					radial-gradient(white, rgba(255,255,255,.15) 2px, transparent 6px),
-					radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 4px),
-					radial-gradient(white, rgba(255,255,255,.1) 1px, transparent 2px);
-					background-size: 535px 459px, 314px 368px, 250px 250px, 187px 169px;
-					background-position: 0 0, 41px 63px, 135px 271px, 73px 101px;
+					    z-index: 0;
+					    background-color:black;
+					    background-image:
+					    radial-gradient(white, rgba(255,255,255,.2) 3px, transparent 10px),
+					    radial-gradient(white, rgba(255,255,255,.15) 2px, transparent 6px),
+					    radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 4px),
+					    radial-gradient(white, rgba(255,255,255,.1) 1px, transparent 2px);
+					    background-size: 535px 459px, 314px 368px, 250px 250px, 187px 169px;
+					    background-position: 0 0, 41px 63px, 135px 271px, 73px 101px;
 					}
 
 					.charsheet-root {
-					z-index: 1;
-					background: transparent url() repeat top center;
-                    overflow-y: scroll;
+					    z-index: 1;
+					    background: transparent url() repeat top center;
+                        overflow-y: scroll;
 					}
 
 					@media print {
@@ -45,61 +45,61 @@
 					}
 
 					body {
-					font-family: 'Exo 2', tahoma, sans-serif;
-					font-size: 13px;
+					    font-family: 'Exo 2', tahoma, sans-serif;
+					    font-size: 13px;
 					}
 
 					.charsheet {
-					width: 900px;
-					box-sizing: border-box;
-					margin: auto;
+					    width: 900px;
+					    box-sizing: border-box;
+					    margin: auto;
 					}
 
 					.standard-row, .flex-row {
-					width: 100%;
-					clear: both;
-					page-break-inside: avoid;
+					    width: 100%;
+					    clear: both;
+					    page-break-inside: avoid;
 					}
 
 					.standard-row {
-					display: block;
+					    display: block;
 					}
 
 					.flex-row {
-					display: flex;
-					flex-direction: row;
-                    flex-grow: 1;
+					    display: flex;
+					    flex-direction: row;
+                        flex-grow: 1;
 					}
 
 					.flex-column {
-					clear: both;
-					display: flex;
-					flex-direction: column;
-					flex-grow: 1;
+					    clear: both;
+					    display: flex;
+					    flex-direction: column;
+					    flex-grow: 1;
 					}
 
 					.blocktitle {
-					color: white;
-					text-align:left;
-					padding-left: 1em;
-					margin-top: 0.5em;
-					text-transform: uppercase;
-                    /* Enable these background images for printing even if main background off */
-					-webkit-print-color-adjust: exact !important;   /* Chrome, Safari */
-					color-adjust: exact !important;                 /*Firefox*/
-                    width: 10em;
-                    /* purple to red with opacity at 75% */
-                    background-image: radial-gradient(ellipse at 0% 100%, #600060 30%, #BF0000 100%);
-					clip-path: polygon(0% 0, calc(100% - 0.5em) 0%, 100% 0.5em, 100% 100%, 0.5em 100%, 0% calc(100% - 0.5em));
+					    color: white;
+					    text-align:left;
+					    padding-left: 1em;
+					    margin-top: 0.5em;
+					    text-transform: uppercase;
+                        /* Enable these background images for printing even if main background off */
+					    -webkit-print-color-adjust: exact !important;   /* Chrome, Safari */
+					    color-adjust: exact !important;                 /*Firefox*/
+                        width: 10em;
+                        /* purple to red with opacity at 75% */
+                        background-image: radial-gradient(ellipse at 0% 100%, #600060 30%, #BF0000 100%);
+					    clip-path: polygon(0% 0, calc(100% - 0.5em) 0%, 100% 0.5em, 100% 100%, 0.5em 100%, 0% calc(100% - 0.5em));
                     }
 
 					.bordered {
-					border: 2px solid #600060;
-					background-color: white;
-					text-align: left;
-                    margin-left: 0.5em;
-					clip-path: polygon(0% 0, calc(100% - 1.0em) 0%, 100% 1.0em, 100% 100%, 1.0em 100%, 0% calc(100% - 1.0em));
-                    flex-grow: 1;
+					    border: 2px solid #600060;
+					    background-color: white;
+					    text-align: left;
+                        margin-left: 0.5em;
+					    clip-path: polygon(0% 0, calc(100% - 1.0em) 0%, 100% 1.0em, 100% 100%, 1.0em 100%, 0% calc(100% - 1.0em));
+                        flex-grow: 1;
 					}
 
 					.underlined-block {
@@ -108,29 +108,29 @@
 					}
 
 					.div-table {
-					display: table;
-					border-spacing: 5px; /* cellspacing:poor IE support for  this */
-                    width: 100%;
+					    display: table;
+					    border-spacing: 5px; /* cellspacing:poor IE support for  this */
+                        width: 100%;
 					}
 
 					.div-table-row {
-					display: table-row;
-					width: auto;
-					clear: both;
+					    display: table-row;
+					    width: auto;
+					    clear: both;
 					}
 
 					.div-table-cell {
-					display: table-cell;
-					text-align: center;
-                    min-height: 1px;
-                    vertical-align: top;
+					    display: table-cell;
+					    text-align: center;
+                        min-height: 1px;
+                        vertical-align: top;
 					}
 
 					.div-table-cell-left {
-					display: table-cell;
-					text-align: left;
-					min-height: 1px;
-					vertical-align: top;
+					    display: table-cell;
+					    text-align: left;
+					    min-height: 1px;
+					    vertical-align: top;
 					}
 
 					.centered-3em-box {
@@ -140,14 +140,14 @@
 					}
 
 					.bordered-smallclip {
-					border: 2px solid #600060;
-					background-color: white;
-					text-align: left;
-					clip-path: polygon(0% 0, calc(100% - 1.0em) 0%, 100% 1.0em, 100% 100%, 1.0em 100%, 0% calc(100% - 1.0em));
+					    border: 2px solid #600060;
+					    background-color: white;
+					    text-align: left;
+					    clip-path: polygon(0% 0, calc(100% - 1.0em) 0%, 100% 1.0em, 100% 100%, 1.0em 100%, 0% calc(100% - 1.0em));
 					}
 
 					.centered-3em-box, .bordered-smallclip {
-					clip-path: polygon(0% 0, calc(100% - 0.5em) 0%, 100% 0.5em, 100% 100%, 0.5em 100%, 0% calc(100% - 0.5em));
+					    clip-path: polygon(0% 0, calc(100% - 0.5em) 0%, 100% 0.5em, 100% 100%, 0.5em 100%, 0% calc(100% - 0.5em));
 					}
 
 				</style>
