@@ -653,7 +653,7 @@
 														</xsl:for-each>
 														<div class="div-table-cell-left" style="text-transform: capitalize;"><xsl:value-of select="subtype"/></div>
 														<div class="div-table-cell-left" style="text-transform: capitalize;"><xsl:value-of select="special"/></div>
-														<div class="div-table-cell" style="text-transform: capitalize;">
+														<div class="div-table-cell">
 															<xsl:if test='carried = "1"'>
 																&#9995;
 															</xsl:if>
@@ -702,7 +702,7 @@
 														<div class="div-table-cell-left" style="text-transform: capitalize;"><xsl:value-of select="subtype"/></div>
 														<div class="div-table-cell" style="text-transform: capitalize;"><xsl:value-of select="uses"/>/<xsl:value-of select="ammo"/></div>
 														<div class="div-table-cell-left" style="text-transform: capitalize;"><xsl:value-of select="special"/></div>
-														<div class="div-table-cell" style="text-transform: capitalize;">
+														<div class="div-table-cell">
 															<xsl:if test='carried = "1"'>
 																&#9995;
 															</xsl:if>
