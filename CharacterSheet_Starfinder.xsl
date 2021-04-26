@@ -578,6 +578,35 @@
 								</div>
 							</div>
 
+							<div name="augementation/upgrade section" class="standard-row">
+								<div name="Augementation/Upgrade overview container" style="width: 100%;">
+									<!--  Abilities ****************************************** -->
+									<div class="blocktitle">AUGMENTATIONS</div>
+									<div class="bordered">
+										<div name="augmentation table" class="div-table">
+											<div class="div-table-row">
+												<div class="div-table-cell"><b>Augementations</b></div>
+												<div class="div-table-cell-left bordered-smallclip" style="text-transform: capitalize;">
+													<xsl:for-each select="auglist/*">
+														<xsl:sort select="name"/>
+														<div style="width: 50%; float: left;"><xsl:value-of select="name"/> (<xsl:value-of select="system"/>, <xsl:value-of select="subtype"/>)</div>
+													</xsl:for-each>
+												</div>
+											</div>
+											<div class="div-table-row">
+												<div class="div-table-cell"><b>Upgrades</b></div>
+												<div class="div-table-cell-left bordered-smallclip" style="text-transform: capitalize;">
+													<xsl:for-each select="upgradelist/*">
+														<xsl:sort select="name"/>
+														<div style="width: 50%; float: left;"><xsl:value-of select="name"/> (<xsl:value-of select="type"/>, <xsl:value-of select="subtype"/>)</div>
+													</xsl:for-each>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
 							<div name="inventory section" class="standard-row">
 								<div name="inventory container" style="width: 100%;">
 									<!--  Inventory ****************************************** -->
