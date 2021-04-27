@@ -703,39 +703,35 @@
 									<div class="bordered">
 										<div name="inventory table" class="div-table">
 											<div class="div-table-row">
-												<div class="div-table-cell"><b>Name</b></div>
 												<div class="div-table-cell"><b>Qty</b></div>
+												<div class="div-table-cell" style="width: 100%;"><b>Name</b></div>
 												<div class="div-table-cell"><b>Bulk</b></div>
-												<div class="div-table-cell"></div>
-												<div class="div-table-cell"></div>
-												<div class="div-table-cell"><b>Name</b></div>
-												<div class="div-table-cell"><b>Qty</b></div>
-												<div class="div-table-cell"><b>Bulk</b></div>
-												<div class="div-table-cell"></div>
-												<div class="div-table-cell"></div>
-												<div class="div-table-cell"><b>Name</b></div>
-												<div class="div-table-cell"><b>Qty</b></div>
-												<div class="div-table-cell"><b>Bulk</b></div>
-												<div class="div-table-cell"></div>
 												<div class="div-table-cell"></div>
 											</div>
 											<xsl:for-each select="inventorylist/*">
 												<xsl:sort select="name"/>
-                                                <xsl:if test="(position() mod 3) = 1">
 												<div class="div-table-row"/>
-												</xsl:if>
-													<div class="div-table-cell-left" style="text-transform: capitalize;"><xsl:value-of select="name"/></div>
-													<div class="div-table-cell" style="text-transform: capitalize;"><xsl:value-of select="count"/></div>
-													<div class="div-table-cell" style="text-transform: capitalize;"><xsl:copy-of select="bulk"/></div>
-													<div class="div-table-cell" style="text-transform: capitalize;">
-														<xsl:if test='carried ="1"' >
-															&#9995;
-														</xsl:if>
-														<xsl:if test='carried ="2"' >
-															&#128085;
-														</xsl:if>
-													</div>
-													<div class="div-table-cell" style="width: 2em;"></div>
+												<div class="div-table-cell" style="text-transform: capitalize;"><xsl:value-of select="count"/></div>
+												<div class="div-table-cell-left" style="text-transform: capitalize;">
+													<details>
+														<summary>
+															<xsl:value-of select="name"/> (<xsl:value-of select="type"/>, <xsl:value-of select="subtype"/>)
+														</summary>
+														<div class="detail-expanded">
+															<xsl:copy-of select="description/*"/>
+														</div>
+													</details>
+												</div>
+												<div class="div-table-cell" style="text-transform: capitalize;"><xsl:copy-of select="bulk"/></div>
+												<div class="div-table-cell" style="text-transform: capitalize;">
+													<xsl:if test='carried ="1"' >
+														&#9995;
+													</xsl:if>
+													<xsl:if test='carried ="2"' >
+														&#128085;
+													</xsl:if>
+												</div>
+												<div class="div-table-cell" style="width: 2em;"></div>
 											</xsl:for-each>
 										</div>
 										<div style="width: 100%; text-align: right;">* &#9995;: Carried, &#128085;: Equipped</div>
