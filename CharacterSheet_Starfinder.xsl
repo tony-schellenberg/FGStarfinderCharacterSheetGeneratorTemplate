@@ -102,6 +102,13 @@
                         flex-grow: 1;
 					}
 
+					.bold-label {
+                    	font-weight: bold;
+						vertical-align: top;
+                    	width: min-content;
+						float: left;
+					}
+
 					.underlined-block {
 						display: inline-block;
 						text-decoration: underline;
@@ -188,21 +195,21 @@
 													</xsl:for-each>
 												</div>
 
-												<div class="div-table-cell-left"><b>Race:</b> <div contenteditable="true" class="underlined-block"><xsl:value-of select="race"/></div></div>
-												<div class="div-table-cell-left"><b>Theme:</b> <div contenteditable="true" class="underlined-block"><xsl:value-of select="theme"/></div></div>
-												<div class="div-table-cell-left"><b>Speed:</b> <div contenteditable="true" class="underlined-block" style="width: 10em;"><xsl:value-of select="speed/final"/></div></div>
+												<div class="div-table-cell-left"><div class="bold-label">Race:</div> <div contenteditable="true" class="underlined-block"><xsl:value-of select="race"/></div></div>
+												<div class="div-table-cell-left"><div class="bold-label">Theme:</div> <div contenteditable="true" class="underlined-block"><xsl:value-of select="theme"/></div></div>
+												<div class="div-table-cell-left"><div class="bold-label">Speed:</div> <div contenteditable="true" class="underlined-block" style="width: 10em;"><xsl:value-of select="speed/final"/> (<xsl:value-of select="speed/special"/>)</div></div>
 											</div>
 											<div class="div-table-row">
-													<div class="div-table-cell-left"><b>Size:</b> <div contenteditable="true" class="underlined-block"><xsl:value-of select="size"/></div></div>
-													<div class="div-table-cell-left"><b>Age:</b> <div contenteditable="true" class="underlined-block"><xsl:value-of select="age"/></div></div>
-													<div class="div-table-cell-left"><b>Height:</b> <div contenteditable="true" class="underlined-block"><xsl:value-of select="height"/></div></div>
-													<div class="div-table-cell-left"><b>Weight:</b> <div contenteditable="true" class="underlined-block"><xsl:value-of select="weight"/></div></div>
+													<div class="div-table-cell-left"><div class="bold-label">Size:</div> <div contenteditable="true" class="underlined-block"><xsl:value-of select="size"/></div></div>
+													<div class="div-table-cell-left"><div class="bold-label">Age:</div> <div contenteditable="true" class="underlined-block"><xsl:value-of select="age"/></div></div>
+													<div class="div-table-cell-left"><div class="bold-label">Height:</div> <div contenteditable="true" class="underlined-block"><xsl:value-of select="height"/></div></div>
+													<div class="div-table-cell-left"><div class="bold-label">Weight:</div> <div contenteditable="true" class="underlined-block"><xsl:value-of select="weight"/></div></div>
 											</div>
 											<div class="div-table-row">
-													<div class="div-table-cell-left"><b>Gender:</b> <div contenteditable="true" class="underlined-block"><xsl:value-of select="gender"/></div></div>
-													<div class="div-table-cell-left"><b>Homeworld:</b> <div contenteditable="true" class="underlined-block"><xsl:value-of select="homeworld"/></div></div>
-													<div class="div-table-cell-left"><b>Alignment:</b> <div contenteditable="true" class="underlined-block"><xsl:value-of select="alignment"/></div></div>
-													<div class="div-table-cell-left"><b>Deity:</b> <div contenteditable="true" class="underlined-block"><xsl:value-of select="deity"/></div></div>
+													<div class="div-table-cell-left"><div class="bold-label">Gender:</div> <div contenteditable="true" class="underlined-block"><xsl:value-of select="gender"/></div></div>
+													<div class="div-table-cell-left"><div class="bold-label">Homeworld:</div> <div contenteditable="true" class="underlined-block"><xsl:value-of select="homeworld"/></div></div>
+													<div class="div-table-cell-left"><div class="bold-label">Alignment:</div> <div contenteditable="true" class="underlined-block"><xsl:value-of select="alignment"/></div></div>
+													<div class="div-table-cell-left"><div class="bold-label">Deity:</div> <div contenteditable="true" class="underlined-block"><xsl:value-of select="deity"/></div></div>
 											</div>
 										</div>
 									</div>
