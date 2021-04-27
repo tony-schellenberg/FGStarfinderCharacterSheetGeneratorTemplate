@@ -516,7 +516,14 @@
 									<div class="bordered">
 										<div name="inventory table" class="div-table">
 											<div class="div-table-row">
-												Current Bulk: <div contenteditable="true" class="bordered centered-3em-box"><xsl:value-of select="encumbrance/load"/></div>
+												<div class="div-table-cell">Current Bulk</div>
+												<div class="div-table-cell">ArChk Penalty</div>
+												<div class="div-table-cell">Max Dex Bonus</div>
+											</div>
+											<div class="div-table-row">
+												<div class="div-table-cell"><div contenteditable="true" class="bordered centered-3em-box"><xsl:value-of select="encumbrance/load"/></div></div>
+												<div class="div-table-cell"><div contenteditable="true" class="bordered centered-3em-box"><xsl:value-of select="encumbrance/armorcheckpenalty"/></div></div>
+												<div class="div-table-cell"><div contenteditable="true" class="bordered centered-3em-box"><xsl:value-of select="encumbrance/armormaxstatbonus"/></div></div>
 											</div>
 											<div class="div-table-row">
 												<div class="div-table-cell">Unencumbered</div>
