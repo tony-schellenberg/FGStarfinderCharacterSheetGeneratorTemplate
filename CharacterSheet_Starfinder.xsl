@@ -114,6 +114,10 @@
 						text-decoration: underline;
 					}
 
+					.detail-expanded {
+						margin-left: 3em;
+					}
+
 					.div-table {
 					    display: table;
 					    border-spacing: 5px; /* cellspacing:poor IE support for  this */
@@ -155,6 +159,15 @@
 
 					.centered-3em-box, .bordered-smallclip {
 					    clip-path: polygon(0% 0, calc(100% - 0.5em) 0%, 100% 0.5em, 100% 100%, 0.5em 100%, 0% calc(100% - 0.5em));
+					}
+
+					p {
+						margin-top: 0.5ex;
+						margin-bottom: 0.5ex;
+					}
+
+					td {
+						font-size: 13px;
 					}
 
 				</style>
@@ -552,7 +565,14 @@
 												<div class="div-table-cell-left bordered-smallclip" style="text-transform: capitalize;">
 													<xsl:for-each select="traitlist/*">
 														<xsl:sort select="name"/>
-														<div style="width: 20%; float: left;"><xsl:value-of select="name"/></div>
+														<details>
+															<summary>
+																<xsl:value-of select="name"/>
+															</summary>
+															<div class="detail-expanded">
+																<xsl:copy-of select="text"/>
+															</div>
+														</details>
 													</xsl:for-each>
 												</div>
 											</div>
@@ -561,7 +581,14 @@
 												<div class="div-table-cell-left bordered-smallclip" style="text-transform: capitalize;">
 													<xsl:for-each select="themeabilitylist/*">
 														<xsl:sort select="name"/>
-														<div style="width: 20%; float: left;"><xsl:value-of select="name"/></div>
+														<details>
+															<summary>
+																<xsl:value-of select="name"/>
+															</summary>
+															<div class="detail-expanded">
+																<xsl:copy-of select="text"/>
+															</div>
+														</details>
 													</xsl:for-each>
 												</div>
 											</div>
@@ -570,25 +597,48 @@
 												<div class="div-table-cell-left bordered-smallclip" style="text-transform: capitalize;">
 													<xsl:for-each select="specialabilitylist/*">
 														<xsl:sort select="name"/>
-														<div style="width: 20%; float: left;"><xsl:value-of select="name"/></div>
+														<details>
+															<summary>
+																<xsl:value-of select="name"/>
+															</summary>
+															<div class="detail-expanded">
+																<xsl:copy-of select="text"/>
+															</div>
+														</details>
 													</xsl:for-each>
 												</div>
 											</div>
 											<div class="div-table-row">
 												<div class="div-table-cell"><b>Proficiencies</b></div>
-												<div class="div-table-cell-left bordered-smallclip" style="text-transform: capitalize;">
+												<div class="div-table-cell-left bordered-smallclip" style="text-transform: capitalize; width: 100%;">
 													<xsl:for-each select="proficiencylist/*">
 														<xsl:sort select="name"/>
-														<div style="width: 20%; float: left;"><xsl:value-of select="name"/></div>
+														<details>
+															<summary>
+																<xsl:value-of select="name"/>
+															</summary>
+															<div class="detail-expanded">
+																<xsl:copy-of select="summary"/>
+																<xsl:copy-of select="benefit"/>
+															</div>
+														</details>
 													</xsl:for-each>
 												</div>
 											</div>
 											<div class="div-table-row">
 												<div class="div-table-cell"><b>Feats</b></div>
-												<div class="div-table-cell-left bordered-smallclip" style="text-transform: capitalize;">
+												<div class="div-table-cell-left bordered-smallclip" style="text-transform: capitalize; width: 100%;">
 													<xsl:for-each select="featlist/*">
 														<xsl:sort select="name"/>
-														<div style="width: 20%; float: left;"><xsl:value-of select="name"/></div>
+														<details>
+															<summary>
+																<xsl:value-of select="name"/>
+															</summary>
+															<div class="detail-expanded">
+																<xsl:copy-of select="summary"/>
+																<xsl:copy-of select="benefit"/>
+															</div>
+														</details>
 													</xsl:for-each>
 												</div>
 											</div>
@@ -607,23 +657,37 @@
 												<xsl:if test="auglist/* != ''">
 													<div class="div-table-row">
 														<div class="div-table-cell"><b>Augementations</b></div>
-														<div class="div-table-cell-left bordered-smallclip" style="text-transform: capitalize;">
+														<div class="div-table-cell-left bordered-smallclip" style="text-transform: capitalize; width: 100%;">
 															<xsl:for-each select="auglist/*">
 																<xsl:sort select="name"/>
-																<div style="width: 50%; float: left;"><xsl:value-of select="name"/> (<xsl:value-of select="system"/>, <xsl:value-of select="subtype"/>)</div>
+																<details>
+																	<summary>
+																		<xsl:value-of select="name"/> (<xsl:value-of select="system"/>, <xsl:value-of select="subtype"/>)
+																	</summary>
+																	<div class="detail-expanded">
+																		<xsl:copy-of select="description/*"/>
+																	</div>
+																</details>
 															</xsl:for-each>
 														</div>
 													</div>
 												</xsl:if>
 												<xsl:if test="upgradelist/* != ''">
 													<div class="div-table-row">
-														<div class="div-table-cell"><b>Upgrades</b></div>
-														<div class="div-table-cell-left bordered-smallclip" style="text-transform: capitalize;">
-															<xsl:for-each select="upgradelist/*">
-																<xsl:sort select="name"/>
-																<div style="width: 50%; float: left;"><xsl:value-of select="name"/> (<xsl:value-of select="type"/>, <xsl:value-of select="subtype"/>)</div>
-															</xsl:for-each>
-														</div>
+															<div class="div-table-cell"><b>Upgrades</b></div>
+															<div class="div-table-cell-left bordered-smallclip" style="text-transform: capitalize; width: 100%;">
+																<xsl:for-each select="upgradelist/*">
+																	<xsl:sort select="name"/>
+																	<details>
+																		<summary>
+																			<xsl:value-of select="name"/> (<xsl:value-of select="type"/>, <xsl:value-of select="subtype"/>)
+																		</summary>
+																		<div class="detail-expanded">
+																			<xsl:copy-of select="description/*"/>
+																		</div>
+																	</details>
+																</xsl:for-each>
+															</div>
 													</div>
 												</xsl:if>
 											</div>
