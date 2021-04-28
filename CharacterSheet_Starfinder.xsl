@@ -886,33 +886,17 @@
 								</div>
 							</div>
 
-							<div name="appearance section" class="standard-row">
-								<div name="appearance container" style="width: 100%;">
-									<!--  Appearance ****************************************** -->
-									<div class="blocktitle">APPEARANCE</div>
-									<div class="bordered">
-										<div style="padding: 5px;">
-											<xsl:call-template name="replace">
-												<xsl:with-param name="string" select="appearance"/>
-											</xsl:call-template>
-										</div>
-									</div>
-								</div>
-							</div>
+							<!--  Appearance ****************************************** -->
+							<xsl:call-template name="escapedTextBlock">
+								<xsl:with-param name="title" select="'APPEARANCE'"/>
+								<xsl:with-param name="content" select="appearance"/>
+							</xsl:call-template>
 
-							<div name="notes section" class="standard-row">
-								<div name="notes container" style="width: 100%;">
-									<!--  Appearance ****************************************** -->
-									<div class="blocktitle">NOTES</div>
-									<div class="bordered">
-										<div style="padding: 5px;">
-											<xsl:call-template name="replace">
-												<xsl:with-param name="string" select="notes"/>
-											</xsl:call-template>
-										</div>
-									</div>
-								</div>
-							</div>
+							<!--  Notes ****************************************** -->
+							<xsl:call-template name="escapedTextBlock">
+								<xsl:with-param name="title" select="'NOTES'"/>
+								<xsl:with-param name="content" select="notes"/>
+							</xsl:call-template>
 
 						</div> <!-- charsheet -->
 					</div> <!-- charsheet-root -->
@@ -922,7 +906,25 @@
 		</html>
 	</xsl:template>
 
-    <!-- From https://www.oxygenxml.com/archives/xsl-list/200203/msg01000.html -->
+	<xsl:template name="escapedTextBlock">
+        <xsl:param name="title"/>
+		<xsl:param name="content"/>
+		<div name="textBlock section" class="standard-row">
+			<div name="textBlock container" style="width: 100%;">
+				<!--  Appearance ****************************************** -->
+				<div class="blocktitle"><xsl:value-of select="$title"/></div>
+				<div class="bordered">
+					<div style="padding: 5px;">
+						<xsl:call-template name="replace">
+							<xsl:with-param name="string" select="$content"/>
+						</xsl:call-template>
+					</div>
+				</div>
+			</div>
+		</div>
+	</xsl:template>
+
+	<!-- From https://www.oxygenxml.com/archives/xsl-list/200203/msg01000.html -->
 	<xsl:template name="replace">
 		<xsl:param name="string"/>
 		<xsl:choose>
