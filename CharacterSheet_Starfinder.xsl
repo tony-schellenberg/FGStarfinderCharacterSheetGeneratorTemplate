@@ -116,6 +116,7 @@
 
 					.detail-expanded {
 						margin-left: 3em;
+						text-transform: none;
 					}
 
 					.div-table {
@@ -861,10 +862,17 @@
 																	<div class="div-table-cell"><div contenteditable="true" class="bordered centered-3em-box"><xsl:value-of select="$knownlevelspells"/></div></div>
 
 																	<div class="div-table-cell"><div contenteditable="true" class="bordered centered-3em-box"><xsl:value-of select="../../*[name()=concat('availablelevel', $level)]"/></div></div>
-																	<div class="div-table-cell-left" style="text-transform: capitalize;">
+																	<div class="div-table-cell-left" style="text-transform: capitalize; width: 100%;">
 																		<xsl:for-each select="spells/*">
 																			<xsl:sort select="name"/>
-																			<div style="width: 33%; text-align: left; float: left;"><xsl:value-of select="name"/></div>
+																			<details>
+																				<summary>
+																					<xsl:value-of select="name"/> (<xsl:value-of select="range"/>, <xsl:value-of select="school"/>, <xsl:value-of select="save"/>)
+																				</summary>
+																				<div class="detail-expanded">
+																					<xsl:value-of select="description"/>
+																				</div>
+																			</details>
 																		</xsl:for-each>
 																	</div>
 																</xsl:if>
