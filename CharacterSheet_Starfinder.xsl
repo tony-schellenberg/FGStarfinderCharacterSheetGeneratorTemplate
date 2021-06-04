@@ -857,7 +857,7 @@
 																<!-- This is really complicated to make work well. Only include levels that have at least one spell in them -->
 																<xsl:variable name="level" select="level"/>
 																<xsl:variable name="knownlevelspells" select="../../*[name()=concat('knownlevel', $level)]"/>
-																<xsl:if test="$knownlevelspells &gt; 0">
+																<xsl:if test="spells/* != ''">
 																	<div class="div-table-cell"><xsl:value-of select="$level"/></div>
 																	<div class="div-table-cell"><div contenteditable="true" class="bordered centered-3em-box"><xsl:value-of select="$knownlevelspells"/></div></div>
 
