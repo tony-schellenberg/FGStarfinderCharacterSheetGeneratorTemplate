@@ -870,7 +870,9 @@
 																					<xsl:value-of select="name"/> (<xsl:value-of select="range"/>, <xsl:value-of select="school"/>, <xsl:value-of select="save"/>)
 																				</summary>
 																				<div class="detail-expanded">
-																					<xsl:value-of select="description"/>
+																					<xsl:call-template name="replace">
+																						<xsl:with-param name='string' select="description"/>
+																					</xsl:call-template>
 																				</div>
 																			</details>
 																		</xsl:for-each>
